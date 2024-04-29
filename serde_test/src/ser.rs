@@ -34,7 +34,7 @@ impl<'a> Serializer<'a> {
 
 macro_rules! assert_next_token {
     ($ser:expr, $expected:ident) => {
-        assert_next_token!($ser, stringify!($expected), Token::$expected, true);
+        assert_next_token!($ser, stringify!($expected), Token::$expected, true)
     };
     ($ser:expr, $expected:ident($v:expr)) => {
         assert_next_token!(
@@ -42,7 +42,7 @@ macro_rules! assert_next_token {
             format_args!(concat!(stringify!($expected), "({:?})"), $v),
             Token::$expected(v),
             v == $v
-        );
+        )
     };
     ($ser:expr, $expected:ident { $($k:ident),* }) => {
         let compare = ($($k,)*);
